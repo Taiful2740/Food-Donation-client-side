@@ -1,7 +1,9 @@
+import "./App.css";
+
 function App() {
   return (
     <>
-      <h1 className="text-xl text-center">Vite + React</h1>
+      <h1 className="text-3xl text-center my-4">Adidas Official</h1>
     </>
   );
 }
