@@ -1,16 +1,17 @@
-import AllBrand from "../AllBrand/AllBrand";
 import Footer from "../Footer/Footer";
-import CustomerReview from "../Pages/CustomerReview";
-import OurServices from "../Pages/OurServices";
+import OurJourney from "../OurJourney/OurJourney";
+import Welcome from "../Pages/Welcome";
+import WhoWeAre from "../Pages/WhoWeAre";
 import Slider from "../Slider";
 
 const Home = () => {
   return (
     <div>
       <Slider></Slider>
-      <AllBrand></AllBrand>
-      <OurServices></OurServices>
-      <CustomerReview></CustomerReview>
+      <Welcome />
+      <OurJourney />
+      <WhoWeAre />
+
       <Footer></Footer>
     </div>
   );

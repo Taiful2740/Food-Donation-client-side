@@ -1,107 +1,42 @@
-import { FaRegLightbulb, FaHeadset } from "react-icons/fa";
-import { BsGearWideConnected } from "react-icons/bs";
-
-const OurServices = () => {
+/* eslint-disable react/no-unescaped-entities */
+const Welcome = () => {
   return (
-    <div>
-      <section className="max-w-6xl mx-auto">
-        <div>
-          <h1 className=" text-4xl font-medium text-center mt-20" id="welcome">
-            Our Services
-          </h1>
+    <div className="max-w-6xl mx-auto mb-32">
+      <h1 className=" text-4xl font-semibold text-center mt-20" id="welcome">
+        Welcome
+      </h1>
 
-          <div className="flex justify-center mt-5 mb-14">
-            <img src="https://i.ibb.co/2t3xwdf/border-vector.png" alt="" />
-          </div>
-
-          <div className="grid mx-auto ml-5 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* card-1  */}
-            <div data-aos="fade-right">
-              <div
-                className="hero h-[380px] w-[350px]"
-                style={{
-                  backgroundImage:
-                    "url(https://i.ibb.co/vYB0xCD/bg-3-dark.jpg)",
-                }}
-              >
-                <div className="hero-overlay bg-opacity-0"></div>
-                <div className="hero-content text-center text-neutral-content">
-                  <div className="max-w-md">
-                    <div className="flex justify-center text-4xl text-[#b378d4] hover:text-white">
-                      <FaRegLightbulb></FaRegLightbulb>
-                    </div>
-                    <h1 className="mb-5 text-5xl " id="welcome">
-                      Product Ability
-                    </h1>
-                    <p className="mb-5">
-                      Product Ability refers to a product's effectiveness and
-                      features, ensuring it fulfills its intended purpose and
-                      meets customer expectations. It's crucial for customer
-                      satisfaction and brand success.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* card-2  */}
-            <div data-aos="fade-left">
-              <div
-                className="hero h-[380px] w-[350px]"
-                style={{
-                  backgroundImage:
-                    "url(https://i.ibb.co/zH4dTLY/bg-4-dark.jpg)",
-                }}
-              >
-                <div className="hero-overlay bg-opacity-0"></div>
-                <div className="hero-content text-center text-neutral-content">
-                  <div className="max-w-md">
-                    <div className="flex justify-center text-4xl text-[#b378d4] hover:text-white">
-                      <BsGearWideConnected></BsGearWideConnected>
-                    </div>
-                    <h1 className="mb-5 text-5xl " id="welcome">
-                      Product Guaranty
-                    </h1>
-                    <p className="mb-5">
-                      A product guarantee is a promise by a manufacturer or
-                      seller to stand behind their product, providing
-                      reassurance to buyers that it will perform as expected.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* card-3 */}
-            <div data-aos="fade-right">
-              <div
-                className="hero h-[380px] w-[350px]"
-                style={{
-                  backgroundImage:
-                    "url(https://i.ibb.co/y5FDfS3/bg-5-1-dark.jpg)",
-                }}
-              >
-                <div className="hero-overlay bg-opacity-0"></div>
-                <div className="hero-content text-center text-neutral-content">
-                  <div className="max-w-md">
-                    <div className="flex justify-center text-4xl text-[#b378d4] hover:text-white">
-                      <FaHeadset></FaHeadset>
-                    </div>
-                    <h1 className="mb-5 text-5xl " id="welcome">
-                      Customer Support
-                    </h1>
-                    <p className="mb-5">
-                      Customer support is vital for resolving issues, answering
-                      queries, and enhancing customer satisfaction. It plays a
-                      pivotal role in building brand loyalty and trust.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="flex justify-center mt-5 mb-14">
+        <img src="https://i.ibb.co/2t3xwdf/border-vector.png" alt="" />
+      </div>
+      <h2 className="text-4xl font-semibold text-center mt-10">
+        An <span className="text-[#FF3811]">initiative</span> that uses
+        technology to distribute surplus food among <br />
+        needy and <span className="text-[#FF3811]">hungry people.</span>
+      </h2>
+      <p className="text-center mt-5">
+        There are 189.2 million undernourished people in India alone. The aim
+        was to not let anyone sleep hungry, but we knew that was far- <br />{" "}
+        fetched. So, we decided to at least take one tiny step towards this
+        giant issue. 'Food' is our initiative for this cause.
+      </p>
+      <p className="text-center mt-5">
+        It started with one city, and has now been launched in 53 cities, all
+        over India.
+      </p>
+      <p className="text-center mt-5">
+        Food is our commitment towards the community to use excess cooked food
+        to serve the undeserved people. With this initiative, we <br /> help
+        users reduce food wastage and make better and right use of their surplus
+        food. From social events to parties organized at home, <br /> there are
+        several instances where you have perfectly good food left with you in
+        large quantities. However, it becomes useless by the <br /> next day or
+        so. Instead of throwing the food away, we urge people to let the food
+        reach the right mouths. Join hands with us today! A <br /> little
+        thought on your part can mean the world to others!
+      </p>
     </div>
   );
 };
 
-export default OurServices;
+export default Welcome;
