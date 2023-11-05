@@ -40,16 +40,6 @@ const Navbar = () => {
         <NavLink to="availableFoods">Available Foods</NavLink>
       </li>
 
-      {/* <li>
-        <NavLink to="/register">Register</NavLink>
-      </li> */}
-      {/* <li>
-        <NavLink to="/about-us">About Us</NavLink>
-      </li> */}
-
-      {/* <li>
-        <NavLink to="/login">Login</NavLink>
-      </li> */}
       {user ? (
         ""
       ) : (
@@ -115,12 +105,12 @@ const Navbar = () => {
               </h1>
             </Link>
           </div>
-          <div className="navbar-end hidden lg:flex">
-            <ul className="menu menu-horizontal px-1 text-lg font-semibold">
+          <div className="navbar-center hidden lg:flex flex-grow lg:navbar-center">
+            <ul className="menu menu-horizontal navbar-center px-1 text-lg font-semibold">
               {links}
             </ul>
           </div>
-          <div className="navbar-center -ml-28  md:navbar-center lg:navbar-center lg:ml-32">
+          <div className="navbar-center   md:navbar-center lg:navbar-center ">
             {user ? (
               <>
                 {/* <span>{user?.displayName}</span> */}

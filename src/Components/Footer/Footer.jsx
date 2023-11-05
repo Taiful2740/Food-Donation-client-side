@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 const Footer = () => {
   return (
     <div className="-mr-14">
       <footer className="footer footer-center p-10 bg-[#282c31] text-white rounded">
+        <div className="flex ">
+          <img className="w-16 h-16" src={logo} alt="" />
+          <h1 className="text-3xl font-semibold ml-5">No Food Waste</h1>
+        </div>
         <nav className="grid grid-flow-col gap-4">
           <Link className="link link-hover" to="/">
             Home

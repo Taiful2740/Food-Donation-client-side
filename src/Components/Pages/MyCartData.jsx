@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import PropTypes from "prop-types";
 
 const MyCartData = ({ data, cartProduct, setCartProduct }) => {
-  const { _id, photo, name, brand, price } = data;
+  const { _id, food_photo, name, notes, donar_name, donar_photo } = data;
   console.log(data);
   const handleDelete = _id => {
     console.log(_id);
@@ -24,23 +24,30 @@ const MyCartData = ({ data, cartProduct, setCartProduct }) => {
             console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire("Deleted", "Your file has been deleted.", "success");
-              const remining = cartProduct.filter(cart => cart._id !== _id);
-              setCartProduct(remining);
+              const remaining = cartProduct.filter(cart => cart._id !== _id);
+              setCartProduct(remaining);
             }
           });
       }
     });
   };
   return (
-    <div className="card  card-side bg-base-100 shadow-xl">
+    <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
-        <img src={photo} alt="Img" />
+        <img src={food_photo} alt="Img" />
       </figure>
       <div className="card-body">
-        <h2 className="font-bold">{name}</h2>
-        <p> Brand: {brand}</p>
-        <p>Price: ${price}</p>
-        <div className="card-actions justify-end">
+        <h2 className="card-title">Food Name: {name}</h2>
+        <p>{notes}</p>
+        <div>
+          <div className="avatar">
+            <div className="w-24 rounded-full">
+              <img src={donar_photo} />
+            </div>
+          </div>
+          <p>Donar Name: {donar_name}</p>
+        </div>
+        <div className="card-actions justify-center">
           <button onClick={() => handleDelete(_id)} className="btn btn-error">
             Delate
           </button>

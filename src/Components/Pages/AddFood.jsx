@@ -1,26 +1,28 @@
 import Swal from "sweetalert2";
 import Footer from "../Footer/Footer";
 const AddFood = () => {
-  const handleAddProduct = event => {
+  const handleAddFood = event => {
     event.preventDefault();
 
     const form = event.target;
     const name = form.name.value;
-    const brand = form.brand.value;
-    const type = form.type.value;
-    const price = form.price.value;
-    const rating = form.rating.value;
-    const description = form.description.value;
-    const photo = form.photo.value;
+    const donar_name = form.donar_name.value;
+    const quantity = form.quantity.value;
+    const location = form.location.value;
+    const date = form.date.value;
+    const notes = form.notes.value;
+    const food_photo = form.food_photo.value;
+    const donar_photo = form.donar_photo.value;
 
     const newProduct = {
       name,
-      brand,
-      type,
-      price,
-      rating,
-      description,
-      photo,
+      donar_name,
+      quantity,
+      location,
+      date,
+      notes,
+      food_photo,
+      donar_photo,
     };
     console.log(newProduct);
 
@@ -39,7 +41,7 @@ const AddFood = () => {
           Swal.fire({
             icon: "success",
             title: "Success",
-            text: "Coffee Added Successfully!",
+            text: "Food Added Successfully!",
             confirmButtonText: "Cool",
           });
         }
@@ -48,34 +50,32 @@ const AddFood = () => {
   return (
     <>
       <div className="bg-gray-200 p-24">
-        <h1 className="text-3xl font-extrabold text-center mb-4">
-          Add Product
-        </h1>
-        <form onSubmit={handleAddProduct}>
+        <h1 className="text-3xl font-extrabold text-center mb-4">Add Food</h1>
+        <form onSubmit={handleAddFood}>
           {/* form row name */}
           <div className=" md:flex justify-center">
             <div className="form-control mr-4 md:w-1/2">
               <label className="label">
-                <span className="label-text">Product Name</span>
+                <span className="label-text">Food Name</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
                   name="name"
-                  placeholder="Enter product name"
+                  placeholder="Enter food name"
                   className="input input-bordered w-full"
                 />
               </label>
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Brand Name</span>
+                <span className="label-text">Donar Name</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="brand"
-                  placeholder=" Enter brand name"
+                  name="donar_name"
+                  placeholder=" Enter donar name"
                   className="input input-bordered w-full"
                 />
               </label>
@@ -85,26 +85,26 @@ const AddFood = () => {
           <div className=" md:flex justify-center">
             <div className="form-control mr-4 md:w-1/2">
               <label className="label">
-                <span className="label-text">Type</span>
+                <span className="label-text">Food Quantity</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="type"
-                  placeholder="Enter product type"
+                  name="quantity"
+                  placeholder="Enter food quantity"
                   className="input input-bordered w-full"
                 />
               </label>
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Price</span>
+                <span className="label-text">Pickup Location</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="price"
-                  placeholder="Enter product price"
+                  name="location"
+                  placeholder="Enter pickup location"
                   className="input input-bordered w-full"
                 />
               </label>
@@ -114,50 +114,64 @@ const AddFood = () => {
           <div className=" md:flex justify-center">
             <div className="form-control mr-4 md:w-1/2">
               <label className="label">
-                <span className="label-text">Rating</span>
+                <span className="label-text">Expired Date</span>
               </label>
               <label className="input-group">
                 <input
-                  type="text"
-                  name="rating"
-                  placeholder="Enter product rating"
+                  type="date"
+                  name="date"
+                  placeholder="Enter expiration date"
                   className="input input-bordered w-full"
                 />
               </label>
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Short Description</span>
+                <span className="label-text">Additional Notes</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="description"
-                  placeholder="Enter project description"
+                  name="notes"
+                  placeholder="Enter Notes"
                   className="input input-bordered w-full"
                 />
               </label>
             </div>
           </div>
           {/* photo url */}
-          <div className="justify-center">
-            <div className="form-control mr-4 md:w-full">
+          <div className=" md:flex justify-center items-center">
+            <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Photo </span>
+                <span className="label-text">Food Image</span>
               </label>
               <label className="input-group">
                 <input
-                  type="text"
-                  name="photo"
+                  type="photo"
+                  name="food_photo"
+                  placeholder="Enter Photo URL"
+                  className="input input-bordered w-full"
+                />
+              </label>
+            </div>
+            <div className="form-control md:w-1/2">
+              <label className="label">
+                <span className="label-text">Donar Image </span>
+              </label>
+              <label className="input-group">
+                <input
+                  type="photo"
+                  name="donar_photo"
                   placeholder="Enter Photo URL"
                   className="input input-bordered w-full"
                 />
               </label>
             </div>
           </div>
+
           <input
             type="submit"
-            value="Add Product"
+            value="Add Food"
             className="mt-6 bg-[#d804a3] text-white hover:bg-green-600 btn btn-block"
           />
         </form>

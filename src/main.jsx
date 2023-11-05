@@ -61,8 +61,7 @@ const router = createBrowserRouter([
       {
         path: "/availableFoods",
         element: <AvailableFoods />,
-        loader: () =>
-          fetch("https://taiful-taiful-islams-projects.vercel.app/cart"),
+        loader: () => fetch("http://localhost:5000/food"),
       },
 
       {
