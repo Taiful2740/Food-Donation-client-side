@@ -9,20 +9,14 @@ import ErrorPage from "./Components/ErrorPage/ErrorPage";
 import AboutUs from "./Components/Pages/AboutUs";
 import Register from "./Components/LoginRegister/Register";
 import LogIn from "./Components/LoginRegister/LogIn";
-import Profile from "./Components/Header/Profile";
-import Reebok from "./Components/Brand/Reebok";
-import Adidas from "./Components/Brand/Adidas";
-import Puma from "./Components/Brand/Puma";
-import Nike from "./Components/Brand/Nike";
-import Gucci from "./Components/Brand/Gucci";
-import Zara from "./Components/Brand/Zara";
 import UpdateProduct from "./Components/Pages/UpdateProduct";
 import Details from "./Components/Pages/Details";
-import MyCart from "./Components/Header/MyCart";
 import PrivateRoute from "./Components/Header/PrivateRoute";
 import AddFood from "./Components/Pages/AddFood.jsx";
 import ManageMyFood from "./Components/Pages/ManageMyFood.jsx";
 import MyFoodRequest from "./Components/Pages/MyFoodRequest.jsx";
+import AvailableFoods from "./Components/Header/AvailableFoods.jsx";
+import ContactUs from "./Components/Footer/ContactUs.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,14 +37,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      {
-        path: "/my-cart",
-        element: (
-          <PrivateRoute>
-            <MyCart></MyCart>,
-          </PrivateRoute>
-        ),
-      },
+
       {
         path: "/about-us",
         element: <AboutUs></AboutUs>,
@@ -72,8 +59,10 @@ const router = createBrowserRouter([
         element: <LogIn></LogIn>,
       },
       {
-        path: "/profile",
-        element: <Profile></Profile>,
+        path: "/availableFoods",
+        element: <AvailableFoods />,
+        loader: () =>
+          fetch("https://taiful-taiful-islams-projects.vercel.app/cart"),
       },
 
       {
@@ -84,12 +73,7 @@ const router = createBrowserRouter([
             `https://taiful-taiful-islams-projects.vercel.app/product/${params.id}`
           ),
       },
-      {
-        path: "/mycart",
-        element: <MyCart></MyCart>,
-        loader: () =>
-          fetch("https://taiful-taiful-islams-projects.vercel.app/cart"),
-      },
+
       {
         path: "/details/:id",
         element: <Details></Details>,
@@ -99,65 +83,8 @@ const router = createBrowserRouter([
           ),
       },
       {
-        path: "/reebok",
-        element: (
-          <PrivateRoute>
-            <Reebok></Reebok>
-          </PrivateRoute>
-        ),
-        loader: () =>
-          fetch("https://taiful-taiful-islams-projects.vercel.app/product"),
-      },
-      {
-        path: "/adidas",
-        element: (
-          <PrivateRoute>
-            <Adidas></Adidas>
-          </PrivateRoute>
-        ),
-        loader: () =>
-          fetch("https://taiful-taiful-islams-projects.vercel.app/product"),
-      },
-
-      {
-        path: "/puma",
-        element: (
-          <PrivateRoute>
-            <Puma></Puma>
-          </PrivateRoute>
-        ),
-        loader: () =>
-          fetch("https://taiful-taiful-islams-projects.vercel.app/product"),
-      },
-      {
-        path: "/nike",
-        element: (
-          <PrivateRoute>
-            <Nike></Nike>
-          </PrivateRoute>
-        ),
-        loader: () =>
-          fetch("https://taiful-taiful-islams-projects.vercel.app/product"),
-      },
-      {
-        path: "/gucci",
-        element: (
-          <PrivateRoute>
-            <Gucci></Gucci>
-          </PrivateRoute>
-        ),
-        loader: () =>
-          fetch("https://taiful-taiful-islams-projects.vercel.app/product"),
-      },
-      {
-        path: "/zara",
-        element: (
-          <PrivateRoute>
-            <Zara></Zara>
-          </PrivateRoute>
-        ),
-        loader: () =>
-          fetch("https://taiful-taiful-islams-projects.vercel.app/product"),
+        path: "/contactUs",
+        element: <ContactUs />,
       },
     ],
   },

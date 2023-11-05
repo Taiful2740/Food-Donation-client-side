@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 const WhoWeAre = () => {
   return (
     <div className="max-w-6xl mx-auto mb-32">
@@ -10,7 +11,11 @@ const WhoWeAre = () => {
       </div>
       <div className="flex justify-center items-center">
         <div className="w-1/2">
-          <img src="https://www.aahar.org.in/images/chart.png" alt="img" />
+          <img
+            className="h-72 "
+            src="https://www.aahar.org.in/images/chart.png"
+            alt="img"
+          />
         </div>
         <div className="w-1/2">
           <h3 className="text-right text-xl font-light">THE BEGINNING</h3>
@@ -20,9 +25,9 @@ const WhoWeAre = () => {
           <p className="text-right ml-5">
             Food is a brain child of Indore divisional Commissioner Sanjak
             Durey, ably supported by his son Santana Durey a Tech student at
-            IITB and Rakesh Jain director of 'INFOCRATS Web Solutions'. The
+            FITB and Rakish Jain director of 'INFARCTS Web Solutions'. The
             initiative ropes in hoteliers, caterers, bakeries, sweet shops,
-            hostels, malls, individuals & NGO's.​Initiative helps
+            hostels, malls, individuals & NGO's.Initiative helps
             citizens/people/organization to donate cooked/prepared/ packed food
             to serve to the people in need of food. It works in 3 modes.
           </p>

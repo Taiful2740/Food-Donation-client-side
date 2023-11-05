@@ -4,8 +4,9 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import MyCartData from "../Pages/MyCartData";
 
-const MyCart = () => {
+const AvailableFoods = () => {
   const cartData = useLoaderData();
+  console.log(cartData);
 
   const [cartProduct, setCartProduct] = useState(cartData);
 
@@ -33,4 +34,4 @@ const MyCart = () => {
   );
 };
 
-export default MyCart;
+export default AvailableFoods;

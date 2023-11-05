@@ -37,7 +37,7 @@ const Navbar = () => {
       </li>
 
       <li>
-        <NavLink to="">Available Foods</NavLink>
+        <NavLink to="availableFoods">Available Foods</NavLink>
       </li>
 
       {/* <li>
@@ -110,7 +110,7 @@ const Navbar = () => {
                 src={logo}
                 alt=""
               />
-              <h1 className="ml-1 text-2xl font-extrabold invisible md:invisible lg:visible">
+              <h1 className="ml-1 text-xl font-semibold invisible md:invisible lg:visible">
                 No Food Waste
               </h1>
             </Link>

@@ -1,5 +1,6 @@
 import Footer from "../Footer/Footer";
 import OurJourney from "../OurJourney/OurJourney";
+import SuccessStories from "../Pages/SuccessStories";
 import Welcome from "../Pages/Welcome";
 import WhoWeAre from "../Pages/WhoWeAre";
 import Slider from "../Slider";
@@ -11,7 +12,7 @@ const Home = () => {
       <Welcome />
       <OurJourney />
       <WhoWeAre />
-
+      <SuccessStories />
       <Footer></Footer>
     </div>
   );
