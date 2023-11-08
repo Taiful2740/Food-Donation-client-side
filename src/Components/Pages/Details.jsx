@@ -4,33 +4,43 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Details = () => {
-  const product = useLoaderData();
-  const { photo, type, name, brand, price, description, rating } = product;
+  const data = useLoaderData();
+  const {
+    food_photo,
+    location,
+    name,
+    quantity,
+    notes,
+    donar_name,
+    donar_photo,
+    date,
+  } = data;
 
-  console.log(product);
+  console.log(data);
 
   const { user } = useContext(AuthContext);
   const email = user.email;
   const handleAddToCart = () => {
-    const newProduct = {
+    const newFood = {
       name,
-      brand,
-      price,
-      description,
-      rating,
-      photo,
-      type,
+      food_photo,
+      notes,
+      donar_name,
+      donar_photo,
+      quantity,
+      location,
+      date,
       email,
     };
-    console.log(newProduct);
+    console.log(newFood);
 
     // send data to the server
-    fetch("https://taiful-taiful-islams-projects.vercel.app/cart", {
+    fetch("http://localhost:5000/carts", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newProduct),
+      body: JSON.stringify(newFood),
     })
       .then(res => res.json())
       .then(data => {
@@ -38,7 +48,7 @@ const Details = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
-            text: "product Added Successfully",
+            text: "Food Added Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });
@@ -51,7 +61,7 @@ const Details = () => {
       <div className="mx-auto max-w-screen-xl px-9 py-12">
         <div
           className="hero rounded-lg h-[36rem]"
-          style={{ backgroundImage: `url(${photo})` }}
+          style={{ backgroundImage: `url(${food_photo})` }}
         >
           <div className="hero-overlay rounded-b-lg h-32 mt-[28rem]  bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
@@ -69,7 +79,7 @@ const Details = () => {
           {name}
         </h2>
         <p className="block font-sans text-[15px] font-normal leading-relaxed text-gray-700 antialiased">
-          {description}
+          {notes}
         </p>
       </div>
     </div>

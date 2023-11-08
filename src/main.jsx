@@ -17,6 +17,7 @@ import ManageMyFood from "./Components/Pages/ManageMyFood.jsx";
 import MyFoodRequest from "./Components/Pages/MyFoodRequest.jsx";
 import AvailableFoods from "./Components/Header/AvailableFoods.jsx";
 import ContactUs from "./Components/Footer/ContactUs.jsx";
+import UpdateFood from "./Components/Pages/UpdateFood.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,8 +44,20 @@ const router = createBrowserRouter([
         element: <AboutUs></AboutUs>,
       },
       {
+        path: "/details/:id",
+        element: <Details />,
+        loader: () => fetch("http://localhost:5000/food"),
+      },
+      {
         path: "/manageMyFoods",
         element: <ManageMyFood />,
+        loader: () => fetch("http://localhost:5000/food"),
+      },
+      {
+        path: "/updateCoffee/:id",
+        element: <UpdateFood />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/food/${params.id}`),
       },
       {
         path: "/myFoodRequest",

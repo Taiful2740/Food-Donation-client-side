@@ -1,8 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useLoaderData } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+// import { useContext, useState } from "react";
+// import { AuthContext } from "../../AuthProvider/AuthProvider";
 import MyCartData from "../Pages/MyCartData";
+import { useState } from "react";
 
 const AvailableFoods = () => {
   const cartData = useLoaderData();
@@ -10,13 +11,8 @@ const AvailableFoods = () => {
 
   const [cartProduct, setCartProduct] = useState(cartData);
 
-  const { user } = useContext(AuthContext);
-  const email = user?.email;
-
-  useEffect(() => {
-    const file = cartData?.filter(card => card.email == email);
-    setCartProduct(file);
-  }, [cartData]);
+  // const { user } = useContext(AuthContext);
+  // const email = user?.email;
 
   return (
     <div className="max-w-screen-xl mx-auto">

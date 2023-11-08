@@ -1,7 +1,13 @@
 import Swal from "sweetalert2";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { FaEye, FaPen } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const MyCartData = ({ data, cartProduct, setCartProduct }) => {
+  const { user } = useContext(AuthContext);
   const { _id, food_photo, name, notes, donar_name, donar_photo } = data;
   console.log(data);
   const handleDelete = _id => {
@@ -16,7 +22,7 @@ const MyCartData = ({ data, cartProduct, setCartProduct }) => {
       confirmButtonText: "Yes, delete it!",
     }).then(result => {
       if (result.isConfirmed) {
-        fetch(`https://taiful-taiful-islams-projects.vercel.app/cart/${_id}`, {
+        fetch(`http://localhost:5000/food/${_id}`, {
           method: "DELETE",
         })
           .then(res => res.json())
@@ -31,6 +37,7 @@ const MyCartData = ({ data, cartProduct, setCartProduct }) => {
       }
     });
   };
+
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
@@ -39,17 +46,31 @@ const MyCartData = ({ data, cartProduct, setCartProduct }) => {
       <div className="card-body">
         <h2 className="card-title">Food Name: {name}</h2>
         <p>{notes}</p>
-        <div>
+        <div className="flex justify-center items-center">
           <div className="avatar">
-            <div className="w-24 rounded-full">
-              <img src={donar_photo} />
+            <div className="w-12 rounded-full">
+              <img src={user?.photoURL} />
             </div>
           </div>
-          <p>Donar Name: {donar_name}</p>
+          <p className="ml-2">Donar Name: {user?.displayName}</p>
         </div>
-        <div className="card-actions justify-center">
-          <button onClick={() => handleDelete(_id)} className="btn btn-error">
-            Delate
+        <div className="btn-group btn-group-vertical lg:btn-group-horizontal">
+          <Link to={`/details/${_id}`}>
+            <button className="btn bg-[#D2B48C] text-white text-2xl">
+              <FaEye></FaEye>
+            </button>
+          </Link>
+          <Link to={`/updateCoffee/${_id}`}>
+            <button className="btn bg-[#3C393B] text-white text-2xl ">
+              <FaPen></FaPen>
+            </button>
+          </Link>
+
+          <button
+            onClick={() => handleDelete(_id)}
+            className="btn bg-red-600 text-white text-2xl"
+          >
+            <AiFillDelete></AiFillDelete>
           </button>
         </div>
       </div>
