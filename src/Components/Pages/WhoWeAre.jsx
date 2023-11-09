@@ -33,7 +33,7 @@ const WhoWeAre = () => {
           </p>
         </div>
       </div>
-      <div className="flex gap-4 mt-10">
+      <div className="grid gap-4 mt-10 md:grid-cols-2 lg:grid-cols-3">
         {/* card-1 */}
         <div className="card w-96 bg-base-100 shadow-2xl">
           <figure className="px-10 pt-10">

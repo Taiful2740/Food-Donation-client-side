@@ -35,7 +35,7 @@ const Details = () => {
     console.log(newFood);
 
     // send data to the server
-    fetch("http://localhost:5000/carts", {
+    fetch("https://taiful.vercel.app/carts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

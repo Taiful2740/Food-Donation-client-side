@@ -9,7 +9,6 @@ import ErrorPage from "./Components/ErrorPage/ErrorPage";
 import AboutUs from "./Components/Pages/AboutUs";
 import Register from "./Components/LoginRegister/Register";
 import LogIn from "./Components/LoginRegister/LogIn";
-import UpdateProduct from "./Components/Pages/UpdateProduct";
 import Details from "./Components/Pages/Details";
 import PrivateRoute from "./Components/Header/PrivateRoute";
 import AddFood from "./Components/Pages/AddFood.jsx";
@@ -46,18 +45,18 @@ const router = createBrowserRouter([
       {
         path: "/details/:id",
         element: <Details />,
-        loader: () => fetch("http://localhost:5000/food"),
+        loader: () => fetch("https://taiful.vercel.app/food"),
       },
       {
         path: "/manageMyFoods",
         element: <ManageMyFood />,
-        loader: () => fetch("http://localhost:5000/food"),
+        loader: () => fetch("https://taiful.vercel.app/food"),
       },
       {
         path: "/updateCoffee/:id",
         element: <UpdateFood />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/food/${params.id}`),
+          fetch(`https://taiful.vercel.app/food/${params.id}`),
       },
       {
         path: "/myFoodRequest",
@@ -74,26 +73,9 @@ const router = createBrowserRouter([
       {
         path: "/availableFoods",
         element: <AvailableFoods />,
-        loader: () => fetch("http://localhost:5000/food"),
+        loader: () => fetch("https://taiful.vercel.app/food"),
       },
 
-      {
-        path: "/updateProduct/:id",
-        element: <UpdateProduct></UpdateProduct>,
-        loader: ({ params }) =>
-          fetch(
-            `https://taiful-taiful-islams-projects.vercel.app/product/${params.id}`
-          ),
-      },
-
-      {
-        path: "/details/:id",
-        element: <Details></Details>,
-        loader: ({ params }) =>
-          fetch(
-            `https://taiful-taiful-islams-projects.vercel.app/product/${params.id}`
-          ),
-      },
       {
         path: "/contactUs",
         element: <ContactUs />,
