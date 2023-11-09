@@ -6,23 +6,23 @@ const AddFood = () => {
 
     const form = event.target;
     const name = form.name.value;
-    const donar_name = form.donar_name.value;
     const quantity = form.quantity.value;
     const location = form.location.value;
     const date = form.date.value;
     const notes = form.notes.value;
     const food_photo = form.food_photo.value;
-    const donar_photo = form.donar_photo.value;
+    const available = form.available.value;
 
     const newProduct = {
       name,
-      donar_name,
+
       quantity,
       location,
       date,
       notes,
       food_photo,
-      donar_photo,
+
+      available,
     };
     console.log(newProduct);
 
@@ -69,13 +69,13 @@ const AddFood = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Donar Name</span>
+                <span className="label-text">Food Status</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="donar_name"
-                  placeholder=" Enter donar name"
+                  name="available"
+                  placeholder=" Enter food status"
                   className="input input-bordered w-full"
                 />
               </label>
@@ -141,7 +141,7 @@ const AddFood = () => {
           </div>
           {/* photo url */}
           <div className=" md:flex justify-center items-center">
-            <div className="form-control md:w-1/2">
+            <div className="form-control md:w-full">
               <label className="label">
                 <span className="label-text">Food Image</span>
               </label>
@@ -149,19 +149,6 @@ const AddFood = () => {
                 <input
                   type="photo"
                   name="food_photo"
-                  placeholder="Enter Photo URL"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-            <div className="form-control md:w-1/2">
-              <label className="label">
-                <span className="label-text">Donar Image </span>
-              </label>
-              <label className="input-group">
-                <input
-                  type="photo"
-                  name="donar_photo"
                   placeholder="Enter Photo URL"
                   className="input input-bordered w-full"
                 />

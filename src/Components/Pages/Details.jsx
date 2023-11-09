@@ -70,7 +70,7 @@ const Details = () => {
                 onClick={handleAddToCart}
                 className="px-6 py-4 rounded-md text-white bg-[#FF444A]"
               >
-                Add To Cart
+                Request
               </button>
             </div>
           </div>

@@ -8,7 +8,8 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const MyCartData = ({ data, cartProduct, setCartProduct }) => {
   const { user } = useContext(AuthContext);
-  const { _id, food_photo, name, notes, donar_name, donar_photo } = data;
+  const { _id, food_photo, name, notes, available, quantity, date, location } =
+    data;
   console.log(data);
   const handleDelete = _id => {
     console.log(_id);
@@ -45,7 +46,6 @@ const MyCartData = ({ data, cartProduct, setCartProduct }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">Food Name: {name}</h2>
-        <p>{notes}</p>
         <div className="flex justify-center items-center">
           <div className="avatar">
             <div className="w-12 rounded-full">
@@ -54,6 +54,16 @@ const MyCartData = ({ data, cartProduct, setCartProduct }) => {
           </div>
           <p className="ml-2">Donar Name: {user?.displayName}</p>
         </div>
+        <p>{notes}</p>
+        <div className="flex">
+          <p>Quantity: {quantity}</p>
+          <p>Expired Date: {date}</p>
+        </div>
+        <div>
+          <p>Pickup Location: {location}</p>
+          <p>Food Status: {available}</p>
+        </div>
+
         <div className="btn-group btn-group-vertical lg:btn-group-horizontal">
           <Link to={`/details/${_id}`}>
             <button className="btn bg-[#D2B48C] text-white text-2xl">

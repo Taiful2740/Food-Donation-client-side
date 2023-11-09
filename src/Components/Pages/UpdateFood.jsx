@@ -3,17 +3,8 @@ import Swal from "sweetalert2";
 
 const UpdateFood = () => {
   const data = useLoaderData();
-  const {
-    _id,
-    food_photo,
-    location,
-    name,
-    quantity,
-    notes,
-    donar_name,
-    donar_photo,
-    date,
-  } = data;
+  const { _id, food_photo, location, name, quantity, notes, date, available } =
+    data;
 
   const handleUpdateFood = event => {
     event.preventDefault();
@@ -22,21 +13,19 @@ const UpdateFood = () => {
     const name = form.name.value;
     const food_photo = form.food_photo.value;
     const notes = form.notes.value;
-    const donar_name = form.donar_name.value;
-    const donar_photo = form.donar_photo.value;
     const quantity = form.quantity.value;
     const location = form.location.value;
     const date = form.date.value;
+    const available = form.available.value;
 
     const updatedFood = {
       name,
       food_photo,
       notes,
-      donar_name,
-      donar_photo,
       quantity,
       location,
       date,
+      available,
     };
     console.log(updatedFood);
 
@@ -86,14 +75,14 @@ const UpdateFood = () => {
             </div>
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Donar Name</span>
+                <span className="label-text">Food Status</span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  name="donar_name"
-                  defaultValue={donar_name}
-                  placeholder=" Enter donar name"
+                  name="available"
+                  defaultValue={available}
+                  placeholder=" Enter available"
                   className="input input-bordered w-full"
                 />
               </label>
@@ -163,7 +152,7 @@ const UpdateFood = () => {
           </div>
           {/* photo url */}
           <div className=" md:flex justify-center items-center">
-            <div className="form-control md:w-1/2">
+            <div className="form-control md:w-full">
               <label className="label">
                 <span className="label-text">Food Image</span>
               </label>
@@ -172,20 +161,6 @@ const UpdateFood = () => {
                   type="photo"
                   name="food_photo"
                   defaultValue={food_photo}
-                  placeholder="Enter Photo URL"
-                  className="input input-bordered w-full"
-                />
-              </label>
-            </div>
-            <div className="form-control md:w-1/2">
-              <label className="label">
-                <span className="label-text">Donar Image </span>
-              </label>
-              <label className="input-group">
-                <input
-                  type="photo"
-                  name="donar_photo"
-                  defaultValue={donar_photo}
                   placeholder="Enter Photo URL"
                   className="input input-bordered w-full"
                 />
